@@ -53,4 +53,21 @@ const setGeneratedImages = () => {
     */
 };
 
-// setGeneratedImages();
+// Chatbot Toggle Logic
+const chatbotToggle = document.getElementById('chatbot-toggle');
+const chatbotContainer = document.getElementById('chatbot-container');
+const closeChatbot = document.getElementById('close-chatbot');
+
+if (chatbotToggle && chatbotContainer && closeChatbot) {
+    chatbotToggle.addEventListener('click', () => {
+        chatbotContainer.classList.add('active');
+        chatbotToggle.style.opacity = '0';
+        chatbotToggle.style.pointerEvents = 'none';
+    });
+
+    closeChatbot.addEventListener('click', () => {
+        chatbotContainer.classList.remove('active');
+        chatbotToggle.style.opacity = '1';
+        chatbotToggle.style.pointerEvents = 'all';
+    });
+}
